@@ -32,7 +32,7 @@ svg {
   align-items: center;
 }
 .time {
-  font-size: 7rem;
+  font-size: 9rem;
 }
 
 /* .dayTime {
@@ -41,7 +41,7 @@ svg {
 } */
 
 .seconds {
-  font-size: 4rem;
+  font-size: 5rem;
   color: rgb(187, 16, 16);
 }
 
