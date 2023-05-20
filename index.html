@@ -14,78 +14,54 @@
     <title>Tablet Screen Saver</title>
   </head>
   <body>
-    <div class="mainContainer">
-      <div class="clock">
-        <h1 class="time">
-          <span class="hour"></span><span class="seconds"></span>
-        </h1>
-
-        <h1 class="date"></h1>
-        <!-- <h3>
-          <span class="dayTime">AM</span>
-          
-        </h3> -->
+    <div class="topPart">
+      <div class="timeContainer">
+        <div class="time">
+          <div class="hours"></div>
+          <div class="seconds"></div>
+        </div>
+        <div class="date"></div>
       </div>
 
-      <div class="weather">
-        <div>
-          <h3 class="city">Tirane</h3>
-          <h2 class="tempNow">17°</h2>
+      <div class="cityWeather">
+        <div class="city">
+          <h3>Tirana</h3>
+          <p class="cityTemp">21°</p>
         </div>
-        <div class="weatherContainer">
-          <div class="weatherDayContainer weatherDay1 active">
-            <h3 class="day1 weatherDay">Mon</h3>
-            <div class="weatherIcon1">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                height="40"
-                viewBox="0 96 960 960"
-                width="40"
-              >
-                <path
-                  d="M251 896q-88 0-149.5-61.5T40 685q0-78 50-137t127-71q20-97 94-158.5T482 257q112 0 189 81.5T748 534v24q72-2 122 46.5T920 727q0 69-50 119t-119 50H251Zm0-60h500q45 0 77-32t32-77q0-45-32-77t-77-32h-63v-84q0-91-61-154t-149-63q-88 0-149.5 63T267 534h-19q-62 0-105 43.5T100 685q0 63 44 107t107 44Zm229-260Z"
-                />
-              </svg>
-            </div>
-            <h3 class="temp1 tempDay">19°</h3>
-          </div>
 
-          <div class="weatherDayContainer weatherDay2">
-            <h3 class="day2 weatherDay">Tue</h3>
-            <div class="weatherIcon1">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                height="40"
-                viewBox="0 96 960 960"
-                width="40"
-              >
-                <path
-                  d="M251 896q-88 0-149.5-61.5T40 685q0-78 50-137t127-71q20-97 94-158.5T482 257q112 0 189 81.5T748 534v24q72-2 122 46.5T920 727q0 69-50 119t-119 50H251Zm0-60h500q45 0 77-32t32-77q0-45-32-77t-77-32h-63v-84q0-91-61-154t-149-63q-88 0-149.5 63T267 534h-19q-62 0-105 43.5T100 685q0 63 44 107t107 44Zm229-260Z"
-                />
-              </svg>
-            </div>
-            <h3 class="temp2 tempDay">18°</h3>
-          </div>
+        <div class="weatherCard">
+          <h1 class="day1"></h1>
+          <span class="cityIcon1"></span>
+          <h3 class="day1Temp"></h3>
+        </div>
 
-          <div class="weatherDayContainer weatherDay3">
-            <h3 class="day3 weatherDay">Wed</h3>
-            <div class="weatherIcon1">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                height="40"
-                viewBox="0 96 960 960"
-                width="40"
-              >
-                <path
-                  d="M251 896q-88 0-149.5-61.5T40 685q0-78 50-137t127-71q20-97 94-158.5T482 257q112 0 189 81.5T748 534v24q72-2 122 46.5T920 727q0 69-50 119t-119 50H251Zm0-60h500q45 0 77-32t32-77q0-45-32-77t-77-32h-63v-84q0-91-61-154t-149-63q-88 0-149.5 63T267 534h-19q-62 0-105 43.5T100 685q0 63 44 107t107 44Zm229-260Z"
-                />
-              </svg>
-            </div>
-            <h3 class="temp3 tempDay">17°</h3>
-          </div>
+        <div class="weatherCard">
+          <h1 class="day2"></h1>
+          <span class="cityIcon2"></span>
+          <h3 class="day2Temp"></h3>
+        </div>
+
+        <div class="weatherCard">
+          <h1 class="day3"></h1>
+          <span class="cityIcon3"></span>
+          <h3 class="day3Temp"></h3>
+        </div>
+
+        <div class="weatherCard">
+          <h1 class="day4"></h1>
+          <span class="cityIcon4"></span>
+          <h3 class="day4Temp"></h3>
+        </div>
+
+        <div class="weatherCard">
+          <h1 class="day5"></h1>
+          <span class="cityIcon5"></span>
+          <h3 class="day5Temp"></h3>
         </div>
       </div>
     </div>
+
+    <div class="bottomPart"></div>
 
     <script src="/index.js"></script>
   </body>

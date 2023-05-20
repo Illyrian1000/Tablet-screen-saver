@@ -12,76 +12,108 @@ body {
   -moz-user-select: none; /* Firefox */
   -ms-user-select: none; /* IE10+/Edge */
   user-select: none;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-svg {
-  fill: white;
-  height: 40px;
-}
-
-.mainContainer {
+.topPart {
+  width: 100%;
   display: flex;
   justify-content: space-evenly;
+  margin-bottom: 220px;
+  margin-top: 100px;
   align-items: center;
-  height: 100vh;
 }
 
-.clock {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.timeContainer {
+  text-align: right;
 }
+
 .time {
-  font-size: 9rem;
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
 }
 
-/* .dayTime {
-  font-size: 3rem;
-  margin-right: 20px;
-} */
+.hours {
+  font-size: 100px;
+  font-weight: bold;
+}
 
 .seconds {
-  font-size: 5rem;
-  color: rgb(187, 16, 16);
+  font-size: 75px;
+  color: red;
 }
 
-.weather {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.weather > :nth-child(1) {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 50px;
-  gap: 5px;
+.date {
+  font-size: 28px;
 }
 
 .city {
-  font-size: 2.5rem;
-  font-weight: bolder;
+  text-align: center;
 }
 
-.tempNow {
-  font-size: 2.2rem;
+.city > h3 {
+  font-size: 35px;
+}
+.city > p {
+  font-size: 30px;
 }
 
-.weatherContainer {
-  display: flex;
-  gap: 10px;
+.bottomPart {
+  width: 920px; /* Adjust the width as needed */
+  overflow-x: auto; /* Enable horizontal scrolling */
+  white-space: nowrap; /* Prevent inner divs from wrapping */
+  cursor: pointer;
 }
 
-.weatherContainer > * {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  padding: 10px;
+.weatherItem {
+  display: inline-block;
+  width: 100px;
+  text-align: center;
+  padding: 10px 0px 20px 0;
+  background-color: rgba(211, 211, 211, 0.144);
+  margin: 10px 10px 30px 0px;
+  border-radius: 15px;
 }
 
-.active {
-  border-radius: 10px;
-  background-color: rgba(211, 211, 211, 0.096);
+.weatherDayName {
+  font-size: 22px;
+  color: gray;
+}
+
+.weatherTime {
+  margin-bottom: 20px;
+  font-size: 20px;
+  opacity: 0.7;
+}
+
+.weatherTemp {
+  font-size: 22px;
+}
+
+.bottomPart::-webkit-scrollbar {
+  width: 8px;
+  height: 15px;
+}
+
+.bottomPart::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.bottomPart::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+
+.bottomPart::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.weatherIcons {
+  fill: white;
+  margin: 10px 0;
 }
