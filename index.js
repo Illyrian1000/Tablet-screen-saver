@@ -29,6 +29,10 @@ const sunnySvg = `<svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0
 
 const thunderstormSvg = `<svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 96 960 960" width="48"><path d="m475 1056 97-110-80-40 113-130h80l-97 110 80 40-113 130h-80Zm-240 0 97-110-80-40 113-130h80l-97 110 80 40-113 130h-80Zm55-340q-86.864 0-148.432-61.52Q80 592.96 80 506.165 80 427 136.5 365 193 303 277 297q32-56 84.5-88.5T480.423 176Q571 176 632.5 233.5T708 376q79 4 125.5 53.5T880 545.623Q880 616 830.417 666 780.833 716 710 716H290Zm0-60h420q46.2 0 78.1-32.5 31.9-32.5 31.9-78T788.1 468q-31.9-32-78.1-32h-60v-30q0-71-49.5-120.5T480.212 236q-51.481 0-93.847 27.5Q344 291 324 338l-8 18h-28q-62 2-105 45.393t-43 104.464Q140 568 183.929 612 227.857 656 290 656Zm190-210Z"/></svg>`;
 
+// UPDATE WEATHER IN THE CITY BY DAY
+
+const cityDays = document.querySelectorAll(".weatherCard");
+
 // update time function
 
 const updateTime = function () {
@@ -101,7 +105,6 @@ function updateWeather() {
     .then((data) => {
       let weatherList = Object.entries(data.list);
       let i = 0;
-      console.log(weatherList);
       cityTemp.textContent = Math.round(weatherList[0][1].main.temp) + "°";
       weatherList.forEach((el) => {
         bottomEl.innerHTML += `<div class="weatherItem">
@@ -119,6 +122,18 @@ function updateWeather() {
 
         i++;
       });
+
+      for (let i = 0; i < 5; i++) {
+        cityDays[i].innerHTML = `<h2 class="cityDayName">${getWeekDay(
+          weatherList[i * 8][1].dt
+        )}</h2>
+        <span class="weatherIcons cityIcon">${iconUpdate(
+          weatherList[i * 8][1].weather[0].id
+        )}</span>
+        <p class="cityDayTemp">${Math.round(
+          weatherList[i * 8][1].main.temp
+        )}°</p>`;
+      }
     })
     .catch((error) => console.error(error));
 }
@@ -177,7 +192,7 @@ function scrollContent(timestamp) {
 
   requestAnimationFrame(scrollContent);
 
-  const speedFactor = 1; // Adjust the speed factor as desired (lower values for slower movement)
+  const speedFactor = 1;
   const mouseX = container.scrollLeft + startPosition.x;
   const mouseY = container.scrollTop + startPosition.y;
   const deltaX = (event.clientX - mouseX) * speedFactor;
